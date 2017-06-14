@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String TOTAL_KEY = "totalAmount";
+
     private EditText edtBillAmount;
     private Button btnTip15;
     private Button btnTip20;
@@ -19,6 +21,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String initialValue = "";
+        if (savedInstanceState != null) {
+            initialValue = savedInstanceState.getString(TOTAL_KEY);
+        }
+
         edtBillAmount = (EditText) findViewById(R.id.edt_bill_amount);
         btnTip15 = (Button) findViewById(R.id.btn_15_tip);
         btnTip20 = (Button) findViewById(R.id.btn_20_tip);
@@ -26,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnTip15.setOnClickListener(this);
         btnTip20.setOnClickListener(this);
+
+        txtTotalAmount.setText(initialValue);
     }
 
     @Override
@@ -55,5 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (NumberFormatException e) {
             return null;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(TOTAL_KEY, txtTotalAmount.getText().toString());
+        super.onSaveInstanceState(outState);
     }
 }
