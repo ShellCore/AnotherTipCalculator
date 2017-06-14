@@ -1,4 +1,4 @@
-# [alt-text][logo] Another Tip Calculator
+# ![alt-text][logo] Another Tip Calculator
 
 Android app
 
