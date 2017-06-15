@@ -14,12 +14,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText edtBillAmount;
     private Button btnTip15;
     private Button btnTip20;
+    private Button btnTip30;
+    private Button btnTip40;
     private TextView txtTotalAmount;
+    private TipCalculator tipCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tipCalculator = new TipCalculator();
 
         String initialValue = "";
         if (savedInstanceState != null) {
@@ -29,10 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtBillAmount = (EditText) findViewById(R.id.edt_bill_amount);
         btnTip15 = (Button) findViewById(R.id.btn_15_tip);
         btnTip20 = (Button) findViewById(R.id.btn_20_tip);
+        btnTip30 = (Button) findViewById(R.id.btn_30_tip);
+        btnTip40 = (Button) findViewById(R.id.btn_40_tip);
         txtTotalAmount = (TextView) findViewById(R.id.txt_total_amount);
 
         btnTip15.setOnClickListener(this);
         btnTip20.setOnClickListener(this);
+        btnTip30.setOnClickListener(this);
+        btnTip40.setOnClickListener(this);
 
         txtTotalAmount.setText(initialValue);
     }
@@ -46,25 +55,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_20_tip:
                 calculateTip(0.20);
                 break;
-
+            case R.id.btn_30_tip:
+                calculateTip(0.30);
+                break;
+            case R.id.btn_40_tip:
+                calculateTip(0.40);
+                break;
         }
     }
 
     private void calculateTip(double tip) {
-        Double tipDoubleValue = parseTip(edtBillAmount.getText().toString());
+        Double tipDoubleValue = tipCalculator.parseTip(edtBillAmount.getText().toString());
         if (tipDoubleValue != null) {
-            tipDoubleValue += tipDoubleValue * tip;
-            txtTotalAmount.setText(tipDoubleValue.toString());
+            txtTotalAmount.setText(tipCalculator.calculateTip(tipDoubleValue, tip));
         }
     }
 
-    private Double parseTip(String billAmount) {
-        try {
-            return Double.parseDouble(billAmount);
-        } catch (NumberFormatException e) {
-            return null;
-        }
-    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

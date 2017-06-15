@@ -7,4 +7,6 @@
     <string name="description_bill_amount">Amount of the bill to calculate</string>
     <string name="desciption_15_tip">Add fiftheen perceant of tip</string>
     <string name="desciption_20_tip">Add twenty perceant of tip</string>
+    <string name="btn_30_tip">30% tip</string>
+    <string name="btn_40_tip">40% tip</string>
 </resources>
