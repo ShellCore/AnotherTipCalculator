@@ -4,4 +4,7 @@
     <string name="btn_15_tip">15% tip</string>
     <string name="btn_20_tip">20% tip</string>
     <string name="total_amount">Total amount:</string>
+    <string name="description_bill_amount">Amount of the bill to calculate</string>
+    <string name="desciption_15_tip">Add fiftheen perceant of tip</string>
+    <string name="desciption_20_tip">Add twenty perceant of tip</string>
 </resources>
