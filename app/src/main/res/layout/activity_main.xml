@@ -18,8 +18,10 @@
             android:id="@+id/edt_bill_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/description_bill_amount"
             android:hint="@string/hint_bill_amount"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
@@ -32,15 +34,17 @@
         <Button
             android:id="@+id/btn_15_tip"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:contentDescription="@string/desciption_15_tip"
             android:text="@string/btn_15_tip" />
 
         <Button
             android:id="@+id/btn_20_tip"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:contentDescription="@string/desciption_20_tip"
             android:text="@string/btn_20_tip" />
     </LinearLayout>
 

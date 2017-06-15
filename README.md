@@ -8,6 +8,10 @@ Android app
 
 En esta aplicación, se realiza el ejemplo del código necesario para poder persistir los datos calculados, en caso de que exista una rotación del dispositivo.
 
+#### Ejercicio del curso
+
+Se cambió el tamaño de los botones, para ser más accesibles a usuarios con problemas visuales o motores, así como una descripción de contenido en los campos de captura y botones.
+
 ## Fuente
 
 **Another Tip Calculator** es el ejemplo 2 de la _"Lección 1: Conceptos básicos y UI"_ del curso [Android App Development for Beginners](https://courses.edx.org/courses/course-v1:GalileoX+CAAD002X+1T2017/info) de la plataforma educativa [edX](https://www.edx.org/).

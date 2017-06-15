@@ -11,43 +11,47 @@
         android:id="@+id/til_bill_amount"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/linearLayout"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/linearLayout">
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <EditText
             android:id="@+id/edt_bill_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/description_bill_amount"
             android:hint="@string/hint_bill_amount"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/til_bill_amount"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:id="@+id/linearLayout"
-        android:layout_below="@+id/til_bill_amount"
-        android:layout_alignParentStart="true">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_15_tip"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:contentDescription="@string/desciption_15_tip"
             android:text="@string/btn_15_tip" />
 
         <Button
             android:id="@+id/btn_20_tip"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            android:contentDescription="@string/desciption_20_tip"
             android:text="@string/btn_20_tip" />
     </LinearLayout>
 
@@ -55,19 +59,19 @@
         android:id="@+id/label_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/total_amount"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/linearLayout" />
+        android:layout_toEndOf="@+id/linearLayout"
+        android:text="@string/total_amount" />
 
     <TextView
         android:id="@+id/txt_total_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@id/label_total"
         android:layout_alignStart="@id/label_total"
+        android:layout_below="@id/label_total"
+        android:layout_margin="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
